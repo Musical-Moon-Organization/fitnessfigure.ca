@@ -25,18 +25,6 @@ function register_user() {
 
     wp_update_user(array('ID' => $user_id, 'role' => $role));
 
-    // Create an empty instructor profile if the role is 'instructor'
-    if ($role === 'instructor') {
-        $profile_data = array(
-            'post_title' => $username,
-            'post_content' => '',
-            'post_status' => 'publish',
-            'post_type' => 'instructor_profile',
-            'post_author' => $user_id,
-        );
-        wp_insert_post($profile_data);
-    }
-
     wp_redirect(home_url('/login?registration_success=1'));
     exit;
 }
