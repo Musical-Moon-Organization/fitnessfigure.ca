@@ -1,5 +1,5 @@
 <?php
-function fitness_website_user_roles() {
+function create_custom_roles() {
     add_role(
         'instructor',
         __('Instructor'),
@@ -20,5 +20,5 @@ function fitness_website_user_roles() {
         )
     );
 }
-add_action('init', 'fitness_website_user_roles');
+add_action('init', 'create_custom_roles');
 ?>

@@ -1,6 +1,8 @@
 <?php
 
-function fitness_website_login_form() {
+function login_form() {
+    ob_start(); // Start output buffering
+
     if (is_user_logged_in()) {
         echo "You are already logged in.";
         return;
@@ -18,8 +20,7 @@ function fitness_website_login_form() {
     </form>
 
     <?php
+    return ob_get_clean(); // Return the buffered content
 }
-add_shortcode('fitness_website_login', 'fitness_website_login_form');
-
-
+add_shortcode('login', 'login_form');
 ?>

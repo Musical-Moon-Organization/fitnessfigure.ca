@@ -1,6 +1,8 @@
 <?php
 
-function fitness_website_register_form() {
+function register_form() {
+    ob_start(); // Start output buffering
+    
     if (is_user_logged_in()) {
         echo "You are already logged in.";
         return;
@@ -8,7 +10,7 @@ function fitness_website_register_form() {
     ?>
 
     <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
-        <input type="hidden" name="action" value="fitness_website_register">
+        <input type="hidden" name="action" value="register">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" required>
         <br>
@@ -24,11 +26,12 @@ function fitness_website_register_form() {
             <option value="instructor">Instructor</option>
         </select>
         <br>
-        <input type="submit" value="Register">
+        <input type="submit" name="register" value="Register">
     </form>
 
     <?php
+    return ob_get_clean(); // Return the buffered content
 }
-add_shortcode('fitness_website_register', 'fitness_website_register_form');
+add_shortcode('register', 'register_form');
 
 ?>

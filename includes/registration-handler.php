@@ -1,6 +1,6 @@
 <?php
 
-function fitness_website_register_user() {
+function register_user() {
     if (!isset($_POST['username']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['role'])) {
         wp_redirect(home_url('/register?registration_error=missing_fields'));
         exit;
@@ -25,10 +25,22 @@ function fitness_website_register_user() {
 
     wp_update_user(array('ID' => $user_id, 'role' => $role));
 
+    // Create an empty instructor profile if the role is 'instructor'
+    if ($role === 'instructor') {
+        $profile_data = array(
+            'post_title' => $username,
+            'post_content' => '',
+            'post_status' => 'publish',
+            'post_type' => 'instructor_profile',
+            'post_author' => $user_id,
+        );
+        wp_insert_post($profile_data);
+    }
+
     wp_redirect(home_url('/login?registration_success=1'));
     exit;
 }
-add_action('admin_post_nopriv_fitness_website_register', 'fitness_website_register_user');
-add_action('admin_post_fitness_website_register', 'fitness_website_register_user');
+add_action('admin_post_nopriv_register', 'register_user');
+add_action('admin_post_register', 'register_user');
 
 ?>
