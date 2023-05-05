@@ -141,4 +141,33 @@ function fitness_figure_update_user_profile($user_id) {
     }
 }
 
+// Adding Gallery
+add_action( 'show_user_profile', 'add_gallery_section' );
+add_action( 'edit_user_profile', 'add_gallery_section' );
+function add_gallery_section( $user ) {
+    $user_id = $user->ID;
+    $gallery_id = get_user_meta( $user_id, 'profile_gallery_id', true );
+    $galleries = nggdb::find_all_galleries();
+    ?>
+
+    <h3><?php _e( 'Profile Gallery', 'my_domain' ); ?></h3>
+    <table class="form-table">
+        <tr>
+            <th><label for="profile_gallery_id"><?php _e( 'Select Gallery', 'my_domain' ); ?></label></th>
+            <td>
+                <select name="profile_gallery_id" id="profile_gallery_id">
+                    <option value=""><?php _e( 'Select Gallery', 'my_domain' ); ?></option>
+                    <?php foreach ( $galleries as $gallery ) : ?>
+                        <option value="<?php echo $gallery->gid; ?>"<?php selected( $gallery->gid, $gallery_id ); ?>><?php echo $gallery->title; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <p class="description"><?php _e( 'Select a gallery to use for your profile photos.', 'my_domain' ); ?></p>
+            </td>
+        </tr>
+    </table>
+
+    <?php
+}
+
+
 ?>
