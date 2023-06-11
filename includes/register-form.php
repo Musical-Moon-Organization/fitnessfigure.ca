@@ -1,5 +1,5 @@
 <?php
-
+/* Registration Form */
 function register_form() {
     ob_start(); // Start output buffering
     

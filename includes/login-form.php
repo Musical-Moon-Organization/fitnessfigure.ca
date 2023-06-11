@@ -1,5 +1,5 @@
 <?php
-
+/* Login Form */
 function login_form() {
     ob_start(); // Start output buffering
 

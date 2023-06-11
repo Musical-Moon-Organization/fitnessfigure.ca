@@ -1,9 +1,9 @@
 /* 
 Theme Name:		 Fitness Figure
-Theme URI:		 http://childtheme-generator.com/
-Description:	 Fitness Figure is a child theme of Twenty Twenty Three, created by ChildTheme-Generator.com
+Theme URI:		 https://fitnessfigure.ca
+Description:	 Fitness Figure is a child theme of Twenty Twenty Three, created by John - Musical Moon
 Author:			 VS-215-musical-moon
-Author URI:		 http://childtheme-generator.com/
+Author URI:		 https://fitnessfigure.ca
 Template:		 twentytwentythree
 Version:		 1.0.0
 Text Domain:	 fitness-figure
@@ -11,38 +11,211 @@ Text Domain:	 fitness-figure
 
 
 /*
-    Add your custom styles here
+    Custom styles
 */
-
+header.wp-block-template-part {
+  border-top: 2px orangered;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+body {
+margin: 0;
+--wp--style--global--content-size: 1200px !important;
+--wp--style--global--wide-size: 1200px;
+}
+body.page-template-page-profiles main {
+margin-top: 1em !important;
+}
+.wp-site-blocks {
+background-image: url(https://fitnessfigure.ca/wp-content/uploads/2023/06/bg-dots2.png);
+background-color: #FAFAFB !important;
+}
 .um-search-area {
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex: auto;
-  flex-wrap: nowrap;
-  max-width: 100% !important;
-  border: 1px solid #949494;
-  padding: 4px;
+position: relative;
+width: 100%;
+display: flex;
+flex: auto;
+flex-wrap: nowrap;
+max-width: 100% !important;
+border: 1px solid #949494;
+padding: 4px;
 }
 
 input.um-search-field.search-field {
-  width: 100%;
-  border: none;
-  border-radius: 0;
-  padding: 0 0 0 0.25em;
-  border: 1px solid #949494;
-  flex-grow: 1;
-  margin-left: 0;
-  margin-right: 0;
-  min-width: 3em;
-  padding: 8px;
-  font-size: 20px;
-  text-decoration: unset!important;
+width: 100%;
+border: none;
+border-radius: 0;
+padding: 0 0 0 0.25em;
+border: 1px solid #949494;
+flex-grow: 1;
+margin-left: 0;
+margin-right: 0;
+min-width: 3em;
+padding: 8px;
+font-size: 20px;
+text-decoration: unset!important;
 }
 
 a#um-search-button {
-  text-decoration: none;
-  margin-top: 3px;
-  margin-right: 6px;
-  color: blue;
+text-decoration: none;
+margin-top: 3px;
+margin-right: 6px;
+color: blue;
+}
+
+body.logged-in .login-item {
+display: none; /* Hide login item when user is logged in */
+}
+
+body:not(.logged-in) .logout-item {
+display: none; /* Hide logout item when user is not logged in */
+}
+
+.service_link h5 a {
+color: blue;
+text-transform: none;
+}
+
+.service_title h5 {
+text-transform: none;
+}
+
+.woocommerce-page main {
+max-width: 1200px !important;
+padding: 10px !important;
+}
+
+.woocommerce-account .wp-block-post-title, .woocommerce-account main .woocommerce, .woocommerce-cart .wp-block-post-title, .woocommerce-cart main .woocommerce, .woocommerce-checkout .wp-block-post-title, .woocommerce-checkout main .woocommerce {
+max-width: 1200px !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+float: left;
+width: 20% !important;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+float: right;
+width: 78% !important;
+padding: 20px;
+}
+
+.woocommerce-page table.shop_table {
+width: 100% !important;
+border-collapse: collapse;
+}
+
+/* Custom Banner */
+.wp-block-group.has-global-padding.is-layout-constrained.wp-container-5 {
+background: #3ad0e8;
+text-align: center;
+border-bottom: solid 4px orange;
+position: relative;
+width: 100%;
+padding: 20px;
+}
+.um-directory .um-member-directory-header .um-member-directory-header-row.um-member-directory-search-row {
+  justify-content: center !important;
+}
+
+h1.wp-block-post-title {
+font-weight: normal;
+}
+
+.um-directory .um-members-wrapper .um-members.um-members-grid .um-member .um-member-cover {
+background-color: #70c3d0 !important;
+}
+input.um-do-search.um-button {
+background: orange;
+color: black;
+}
+
+.um-profile img {
+width: 99% !important;
+margin: 0 auto !important;
+margin-top: 5px !important;
+}
+.um-cover-e {
+border-bottom: solid 2px #f5f5f5;
+background: #ffffff !important;
+}
+.um-header {
+  position: relative;
+  padding: 0 0 25px 0;
+  border-bottom: solid 2px #f5f5f5;
+  min-height: 85px;
+  box-sizing: content-box !important;
+  background-color: #ffffff !important;
+}
+.um-profile-navbar.um-messaging-bar {
+  background-color: #ffffff !important;
+}
+.um-profile-nav {
+  background-color: #ffffff !important;
+  border-bottom: solid 2px #f5f5f5;
+}
+.um-profile-nav-item span.title {
+  padding-left: 5px;
+  color: #000000 !important;
+}
+.um *:before {
+color: #000000 !important;
+}
+.um.um-profile.um-viewing.um-119 {
+  background-color: #ffffff !important;
+}
+.um-profile.um .um-profile-headericon a {
+  color: #585555 !important;
+}
+.um-members-messaging-btn.um-members-list-footer-button-wrapper {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.um-profile a.um-message-btn {
+  padding: 10px 15px!important;
+  color: #000000 !important;
+}
+.um-110.um {
+max-width: 1201px !important;
+}
+
+.um-directory .um-member-directory-header .um-member-directory-header-row .um-member-directory-search-line {
+background: #ffffff;
+border: solid 2px;
+color: black;
+border-radius: 4px;
+border-color: #e4e4e4;
+}
+
+section#innerpage_banner {
+background: #aac7ff;
+text-align: center;
+}
+
+section {
+position: relative;
+width: 100%;
+padding: 20px 0;
+}
+
+section#innerpage_banner.innerpage_banner h1 {
+color: black;
+margin: 0;
+padding-bottom: 15px;
+}
+
+.checkout .col-1 {
+  max-width: 100% !important;
+}
+p {
+  color: #000000;
+  background: transparent !important;
+}
+footer p {
+  color: #fff;
+}
+#header-specials em {
+  color: orange !important;
+}
+p#header-specials {
+  padding: 10px;
 }

@@ -1,3 +1,4 @@
+<!-- Custom user roles -->
 <?php
 function create_custom_roles() {
     add_role(

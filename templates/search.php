@@ -14,7 +14,7 @@ if ( $is_user_search ) {
     // The Query
     $user_query = new WP_User_Query( $args );
     
-    // User Loop
+    // User Loop the results
     if ( ! empty( $user_query->results ) ) {
         echo '<h2>Search Results for: ' . $search_term . '</h2>';
         echo '<ul>';

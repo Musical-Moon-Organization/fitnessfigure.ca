@@ -1,5 +1,5 @@
 <?php
-
+/* Custom Register function */
 function register_user() {
     if (!isset($_POST['username']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['role'])) {
         wp_redirect(home_url('/register?registration_error=missing_fields'));
